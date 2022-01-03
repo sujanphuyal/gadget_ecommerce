@@ -1,0 +1,122 @@
+.field_error {
+    color: #ff0000;
+}
+
+.accordion .accordion__hide {
+    background: #f4f4f4;
+    height: 65px;
+    line-height: 65px;
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
+    position: relative;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    font-family: "Poppins";
+    cursor: pointer;
+}
+
+.product__deatils__tab {
+    border-bottom: 1px solid #d5d5d5;
+    display: flex;
+    justify-content: center;
+}
+
+.product__deatils__tab li a {
+    color: #505050;
+    font-size: 20px;
+    line-height: 30px;
+    padding-bottom: 17px;
+    position: relative;
+    text-transform: capitalize;
+    display: block;
+}
+
+.product__deatils__tab li {
+    padding: 0 30px;
+}
+
+.product__deatils__tab li a::before {
+    background: #ff4136 none repeat scroll 0 0;
+    bottom: 0;
+    content: "";
+    height: 2px;
+    position: absolute;
+    transition: all 0.5s ease 0s;
+    width: 0;
+}
+
+.product__deatils__tab li.active a::before {
+    width: 100%;
+}
+
+.product__deatils__tab li a:hover {
+    width: 100%;
+}
+
+.product__tab__content:not(.active) {
+    display: none;
+}
+
+.title__6 {
+    color: #505050;
+    font-size: 24px;
+    line-height: 30px;
+    margin-bottom: 28px;
+    text-transform: capitalize;
+}
+
+.product__desc p {
+    color: #666666;
+    font-size: 14px;
+    line-height: 26px;
+}
+
+.product__desc {
+    margin-bottom: 50px;
+}
+
+.checked {
+    color: orange;
+}
+
+.submit_review_hint {
+    font-size: 20px;
+    color: #003471;
+}
+
+.mt12 {
+    margin-top: 12px;
+}
+
+.fa-star {
+    color: #ffd700;
+    margin-right: 10px;
+    margin-left: 3px;
+    font-size: 22px;
+}
+
+.comment-rating,
+.comment-name {
+    color: #000000;
+    font-size: 18px;
+}
+
+.profile_div {
+    background-color: #E7E9EB;
+    margin-bottom: 10px;
+    padding: 10px 10px;
+    font-size: 18px;
+}
+
+.wishlist_icon {
+    font-weight: bold;
+    margin-left: 30px;
+}
+
+.wishlist_icon:hover {
+    color: #ff0000;
+}
