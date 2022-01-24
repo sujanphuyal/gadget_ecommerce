@@ -2,7 +2,7 @@
 require('connection.inc.php');
 require('functions.inc.php');
 
-$name=get_safe_value($con,$_POST['username']);
+$name=get_safe_value($con,$_POST['name']);
 $email=get_safe_value($con,$_POST['email']);
 $mobile=get_safe_value($con,$_POST['mobile']);
 $password=get_safe_value($con,$_POST['password']);

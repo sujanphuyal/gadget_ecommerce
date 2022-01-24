@@ -212,6 +212,55 @@ if ($avg_rating == '') {
                     <div role="tabpanel" id="reviews" class="product__tab__content fade">
                         <div class="pro__tab__content__inner">
 
+                            
+                            
+                            <?php
+                            if (isset($_SESSION['USER_LOGIN'])) {
+                            ?>
+                                
+
+                                <div class="row" id="post-review-box ">
+                                    <div class="col-md-12">
+                                        <form method="post">
+
+                                        <!-- Star Rating Starts -->
+                                        <div class="rating-wrap">
+                                        <h3 class="review heading submit_review_hint" >Enter your review</h3><br />
+                                            <div class="stars">
+                                                <input class="star star-5" id="star-5" type="radio" name="product_rating" value="5" required/>
+                                                    <label class="star star-5" for="star-5"></label>
+                                                <input class="star star-4" id="star-4" type="radio" name="product_rating" value="4" />
+                                                    <label class="star star-4" for="star-4"></label>
+                                                <input class="star star-3" id="star-3" type="radio" name="product_rating" value="3" />
+                                                    <label class="star star-3" for="star-3"></label>
+                                                <input class="star star-2" id="star-2" type="radio" name="product_rating" value="2" />
+                                                    <label class="star star-2" for="star-2"></label>
+                                                <input class="star star-1" id="star-1" type="radio" name="product_rating" value="1" />
+                                                    <label class="star star-1" for="star-1"></label>   
+                                                    <br/>   
+                                                    <h3 id="rating-value"></h3>	   
+                                                    <br/> 
+                                                    <script src="js/star-ratings.js"></script>
+                                                    <br />
+                                                    <textarea class="form-control" cols="50" id="new-review" name="review" placeholder="Enter your review here....." rows="5" ></textarea>
+                                            <div class="text-center mt12">
+                                                <button class="btn btn-success btn-lg" type="submit" name="review_submit">Submit</button>
+                                            </div>
+                                            </div>                                         
+                                        </div>      
+                                            
+                                        <!-- Star Rating Ends -->    
+                                        </form>
+
+                                    </div>
+                                </div>
+
+                            <?php } else {
+                                echo "<span class='submit_review_hint'>Please <a href='login.php'><b>login</b></a> to submit your review</span>";
+                            }
+
+                            ?>
+
                             <br>
                             <?php
                             if (mysqli_num_rows($product_review_res) > 0) {
@@ -246,44 +295,8 @@ if ($avg_rating == '') {
                                     </article>
                             <?php }
                             } else {
-                                echo "<h3 class='review heading submit_review_hint'>No review found</h3><br />";
+                                echo "<h3 class='review heading submit_review_hint'>Users have not given any review to this product.</h3><br />";
                             } ?>
-                            <h3 class="review heading submit_review_hint">Enter your review</h3><br />
-                            <?php
-                            if (isset($_SESSION['USER_LOGIN'])) {
-                            ?>
-
-                                <div class="row" id="post-review-box ">
-                                    <div class="col-md-12">
-                                        <form method="post">
-                                            <select class="form-control" name="product_rating" required>
-                                                <option value="">Select Rating</option>
-                                              
-                                                <option>1</option>
-                                                <option>2</option>
-                                                <option>3</option>
-                                                <option>4</option>
-                                                <option>5</option>
-                                                
-
-                                            </select>
-                                            <br />
-
-                                            <textarea class="form-control" cols="50" id="new-review" name="review" placeholder="Enter your review here....." rows="5"></textarea>
-                                            <div class="text-left mt12">
-
-                                                <button class="btn btn-success btn-lg" type="submit" name="review_submit">Submit</button>
-                                            </div>
-
-                                        </form>
-
-                                    </div>
-                                </div>
-                            <?php } else {
-                                echo "<span class='submit_review_hint'>Please <a href='login.php'><b>login</b></a> to submit your review</span>";
-                            }
-
-                            ?>
 
                         </div>
 
@@ -312,15 +325,13 @@ if ($avg_rating == '') {
         </div>
         <?php
         if (isset($_SESSION['USER_LOGIN'])) {
+            include("user_recom.php");
         ?>
         
-        <?php include("user_recom.php"); ?>
-
         <?php } else {
             echo "<span class='row submit_review_hint'>Please <a href='login.php'><b>login</b></a> to view recommended products</span>";
         }
         ?>
-
 
     </div>
 </section>
