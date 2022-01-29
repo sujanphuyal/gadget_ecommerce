@@ -25,6 +25,10 @@ if (isset($_GET['type']) && $_GET['type'] != '') {
 $sql = "select products.*,categories.categories from products,categories where products.categories_id=categories.id order by products.id desc";
 $res = mysqli_query($con, $sql);
 
+
+
+
+
 ?>
 <div class="content pb-0">
    <div class="orders">
@@ -34,7 +38,10 @@ $res = mysqli_query($con, $sql);
                <div class="card-body">
                   <h4 class="box-title">Products </h4>
                   <h4 class="box-link"><span class='badge badge-add'><a href="manage_product.php">Add Products</a></span> </h4>
+                  
                </div>
+               
+               
                <div class="card-body--">
                   <div class="table-stats order-table ov-h">
                      <table class="table ">

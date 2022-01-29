@@ -19,15 +19,24 @@ if (isset($_GET['id'])) {
 <?php
 }
 
+
+
 if (isset($_POST['review_submit'])) {
     $rating = get_safe_value($con, $_POST['product_rating']);
     $review = get_safe_value($con, $_POST['review']);
 
     $added_on = date('Y-m-d h:i:s');
 
-    $pname=mysqli_query($con,"select product_name from products where id='$product_id'");
-    while($prow=mysqli_fetch_assoc($pname)){
-    mysqli_query($con, "insert into product_review(product_id,user_id,product_name,product_rating,review,status,added_on) values ('$product_id','" . $_SESSION['USER_ID'] . "','$prow[product_name]','$rating','$review','1','$added_on')");
+    $pname = mysqli_query($con, "select product_name from products where id='$product_id'");
+
+    $updatereview = mysqli_query($con, "select * from product_review where user_id=$_SESSION[USER_ID] and product_id='$product_id'");
+
+    while ($prow = mysqli_fetch_assoc($pname)) {
+        if (mysqli_num_rows($updatereview) > 0) {
+            mysqli_query($con, "update product_review set product_rating='$rating',review='$review',added_on='$added_on' where user_id=$_SESSION[USER_ID] and product_id='$product_id'");
+        } else {
+            mysqli_query($con, "insert into product_review(product_id,user_id,product_name,product_rating,review,status,added_on) values ('$product_id','" . $_SESSION['USER_ID'] . "','$prow[product_name]','$rating','$review','1','$added_on')");
+        }
     }
 ?>
     <script>
@@ -91,7 +100,7 @@ if ($avg_rating == '') {
                         <div class="product__big__images">
                             <div class="portfolio-full-image tab-content">
                                 <div role="tabpanel" class="tab-pane fade in active" id="img-tab-1">
-                                    <img src="<?php echo PRODUCT_IMAGE_SITE_PATH . $get_product['0']['image'] ?>" alt="full-image">
+                                    <img src="<?php echo PRODUCT_IMAGE_SITE_PATH . $get_product['0']['image'] ?>" height="300" alt="full-image">
                                 </div>
                             </div>
                         </div>
@@ -164,7 +173,7 @@ if ($avg_rating == '') {
                     if ($cart_show != '') {
                     ?>
                         <a class="fr__btn" href="javascript:void(0)" onclick="manage_cart('<?php echo $get_product['0']['id'] ?>','add')">Add to cart</a>
-                        
+
                         <a class="fr__btn_buy" href="javascript:void(0)" onclick="manage_cart('<?php echo $get_product['0']['id'] ?>','add','yes')">Buy Now</a>
                     <?php } ?>
                 </div>
@@ -212,44 +221,44 @@ if ($avg_rating == '') {
                     <div role="tabpanel" id="reviews" class="product__tab__content fade">
                         <div class="pro__tab__content__inner">
 
-                            
-                            
+
+
                             <?php
                             if (isset($_SESSION['USER_LOGIN'])) {
                             ?>
-                                
+
 
                                 <div class="row" id="post-review-box ">
                                     <div class="col-md-12">
                                         <form method="post">
 
-                                        <!-- Star Rating Starts -->
-                                        <div class="rating-wrap">
-                                        <h3 class="review heading submit_review_hint" >Enter your review</h3><br />
-                                            <div class="stars">
-                                                <input class="star star-5" id="star-5" type="radio" name="product_rating" value="5" required/>
+                                            <!-- Star Rating Starts -->
+                                            <div class="rating-wrap">
+                                                <h3 class="review heading submit_review_hint">Enter your review</h3><br />
+                                                <div class="stars">
+                                                    <input class="star star-5" id="star-5" type="radio" name="product_rating" value="5" required />
                                                     <label class="star star-5" for="star-5"></label>
-                                                <input class="star star-4" id="star-4" type="radio" name="product_rating" value="4" />
+                                                    <input class="star star-4" id="star-4" type="radio" name="product_rating" value="4" />
                                                     <label class="star star-4" for="star-4"></label>
-                                                <input class="star star-3" id="star-3" type="radio" name="product_rating" value="3" />
+                                                    <input class="star star-3" id="star-3" type="radio" name="product_rating" value="3" />
                                                     <label class="star star-3" for="star-3"></label>
-                                                <input class="star star-2" id="star-2" type="radio" name="product_rating" value="2" />
+                                                    <input class="star star-2" id="star-2" type="radio" name="product_rating" value="2" />
                                                     <label class="star star-2" for="star-2"></label>
-                                                <input class="star star-1" id="star-1" type="radio" name="product_rating" value="1" />
-                                                    <label class="star star-1" for="star-1"></label>   
-                                                    <br/>   
-                                                    <h3 id="rating-value"></h3>	   
-                                                    <br/> 
+                                                    <input class="star star-1" id="star-1" type="radio" name="product_rating" value="1" />
+                                                    <label class="star star-1" for="star-1"></label>
+                                                    <br />
+                                                    <h3 id="rating-value"></h3>
+                                                    <br />
                                                     <script src="js/star-ratings.js"></script>
                                                     <br />
-                                                    <textarea class="form-control" cols="50" id="new-review" name="review" placeholder="Enter your review here....." rows="5" ></textarea>
-                                            <div class="text-center mt12">
-                                                <button class="btn btn-success btn-lg" type="submit" name="review_submit">Submit</button>
+                                                    <textarea class="form-control" cols="50" id="new-review" name="review" placeholder="Enter your review here....." rows="5"></textarea>
+                                                    <div class="text-center mt12">
+                                                        <button class="btn btn-success btn-lg" type="submit" name="review_submit">Submit</button>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            </div>                                         
-                                        </div>      
-                                            
-                                        <!-- Star Rating Ends -->    
+
+                                            <!-- Star Rating Ends -->
                                         </form>
 
                                     </div>
@@ -323,16 +332,27 @@ if ($avg_rating == '') {
                 </div>
             </div>
         </div>
-        <?php
-        if (isset($_SESSION['USER_LOGIN'])) {
-            include("user_recom.php");
-        ?>
-        
-        <?php } else {
-            echo "<span class='row submit_review_hint'>Please <a href='login.php'><b>login</b></a> to view recommended products</span>";
-        }
-        ?>
+        <div class="htc__product__container">
+            <div class="row">
+                <div class="product__list clearfix mt--30">
+                    <?php
+                    if (isset($_SESSION['USER_LOGIN'])) {
 
+                        $reviewquery = mysqli_query($con, "select product_rating from product_review where user_id=$_SESSION[USER_ID]");
+                        if (mysqli_num_rows($reviewquery) == 0) {
+                            echo "<span class='row submit_review_hint'>You haven't reviewed any product to recommend any products.</span>";
+                        } else {
+
+
+                            include("user_recom.php");
+                        }
+                    } else {
+                        echo "<span class='row submit_review_hint'>Please <a href='login.php'><b>login</b></a> to view recommended products</span>";
+                    }
+                    ?>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 <!-- End Recommended Product Area -->

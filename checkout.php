@@ -14,7 +14,7 @@ if(isset($_POST['submit'])){
 	$address=get_safe_value($con,$_POST['address']);
 	$city=get_safe_value($con,$_POST['city']);
 	$pincode=get_safe_value($con,$_POST['pincode']);
-	$payment_type=get_safe_value($con,$_POST['payment_type']);
+	$payment_type='COD';
 	$user_id=$_SESSION['USER_ID'];
 	foreach($_SESSION['cart'] as $key=>$val){
 		$productArr=get_product($con,'','',$key);
@@ -46,7 +46,6 @@ if(isset($_POST['submit'])){
 	
 	
 	unset($_SESSION['cart']);
-
 	
 	?>
 	<script>
@@ -151,11 +150,13 @@ if(isset($_POST['submit'])){
                                         </div>
                                     </div>
 									<?php } ?>
+									<?php
+                    if (isset($_SESSION['USER_LOGIN'])) { ?>
                                     <div class="<?php echo $accordion_class?>">
                                         Address Information
                                     </div>
 									<form method="post">
-										<div class="accordion__body">
+										<!-- <div class="accordion__body"> -->
 											<div class="bilinfo">
 												
 													<div class="row">
@@ -178,23 +179,30 @@ if(isset($_POST['submit'])){
 													</div>
 												
 											</div>
-										</div>
+										<!-- </div> -->
 										<div class="<?php echo $accordion_class?>">
 											payment information
 										</div>
-										<div class="accordion__body">
-											<div class="paymentinfo">
+										<!-- <div class="accordion__body"> -->
+											<!-- <div class="paymentinfo"> -->
 												<div class="single-method">
-													COD <input type="radio" name="payment_type" value="COD" required/>
-													&nbsp;&nbsp;PayU <input type="radio" name="payment_type" value="payu" required/>
+													&nbsp; <input type="submit" name="submit" value="Cash On Delivery" class="btn btn-primary" style="width:99%; height:40px;" />
+													<!-- &nbsp; &nbsp; <button class="btn btn-primary" type="submit" name="submit">Proceed </button> -->
 												</div>
-												<div class="single-method">
-												  
-												</div>
-											</div>
-										</div>
-										 <input type="submit" name="submit"/>
+												<!-- <div class="single-method">
+													
+												</div> -->
+												
+												
+											<!-- </div> -->
+											<br>
+											<div  id="paypal-payment-button" >
+												
+                       						</div>
+										<!-- </div> -->
+										 <!-- <input type="submit" name="submit"/> -->
 									</form>
+									<?php } ?>
                                 </div>
                             </div>
                         </div>
@@ -237,5 +245,27 @@ if(isset($_POST['submit'])){
                 </div>
             </div>
         </div>
-        						
+		<script src="https://www.paypal.com/sdk/js?client-id=AYl5d_Vct6UaqVtJD0CqH8RxSRk5yOEmY7bWjA6QCMyR9SAPfwlVyOsJGMFOa5j_2QIo9_N0RfkxnNlc&disable-funding=credit,card"></script>
+    <script>
+		paypal.Buttons({
+    createOrder: function (data, actions) {
+        return actions.order.create({
+            purchase_units : [{
+                amount: {
+                    value: '0.1'
+                }
+            }]
+        });
+    },
+    onApprove: function (data, actions) {
+        return actions.order.capture().then(function (details) {
+            console.log(details)
+            window.location.replace("http://localhost/testing/successfulpayment.php")
+        })
+    },
+    onCancel: function (data) {
+        window.location.replace("http://localhost/testing/cancelledpayment.php")
+    }
+}).render('#paypal-payment-button');
+	</script>		
 <?php require('footer.php')?>        

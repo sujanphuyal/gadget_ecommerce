@@ -98,7 +98,7 @@ if ($cat_id > 0) {
 											<div class="category">
 												<div class="ht__cat__thumb">
 													<a href="product.php?id=<?php echo $list['id'] ?>">
-														<img src="<?php echo PRODUCT_IMAGE_SITE_PATH . $list['image'] ?>" alt="product images">
+														<img src="<?php echo PRODUCT_IMAGE_SITE_PATH . $list['image'] ?>" height="300" alt="product images">
 													</a>
 												</div>
 

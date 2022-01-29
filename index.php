@@ -21,7 +21,7 @@
                             </div>
                             <div class="col-lg-6 col-sm-5 col-xs-12 col-md-5">
                                 <div class="slide__thumb">
-                                    <img src="images/slider/fornt-img/1.png" alt="slider images">
+                                    <img src="images/slider/fornt-img/1.jpg" alt="slider images">
                                 </div>
                             </div>
                         </div>
@@ -45,7 +45,7 @@
                             </div>
                             <div class="col-lg-6 col-sm-5 col-xs-12 col-md-5">
                                 <div class="slide__thumb">
-                                    <img src="images/slider/fornt-img/2.png" alt="slider images">
+                                    <img src="images/slider/fornt-img/2.jpg" alt="slider images">
                                 </div>
                             </div>
                         </div>
@@ -79,7 +79,7 @@
                                     <div class="category">
                                         <div class="ht__cat__thumb">
                                             <a href="product.php?id=<?php echo $list['id'] ?>">
-                                                <img src="<?php echo PRODUCT_IMAGE_SITE_PATH . $list['image'] ?>" alt="product images">
+                                                <img src="<?php echo PRODUCT_IMAGE_SITE_PATH . $list['image'] ?>" height="300" alt="product images">
                                             </a>
                                         </div>
 
@@ -133,7 +133,7 @@
                                 <div class="category">
                                     <div class="ht__cat__thumb">
                                         <a href="product.php?id=<?php echo $list['id'] ?>">
-                                            <img src="<?php echo PRODUCT_IMAGE_SITE_PATH . $list['image'] ?>" alt="product images">
+                                            <img src="<?php echo PRODUCT_IMAGE_SITE_PATH . $list['image'] ?>" height="300" alt="product images">
                                         </a>
                                     </div>
                                     <div class="fr__hover__info">

@@ -120,3 +120,8 @@
 .wishlist_icon:hover {
     color: #ff0000;
 }
+
+.review_list {
+    float: left;
+    margin: 20px;
+}

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 03, 2022 at 02:04 PM
+-- Generation Time: Jan 25, 2022 at 07:04 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.0.13
 
@@ -81,7 +81,7 @@ CREATE TABLE `contact_us` (
 --
 
 INSERT INTO `contact_us` (`id`, `name`, `email`, `mobile`, `comment`, `added_on`) VALUES
-(1, 'ram', 'ram@gmail.com', '986464', 'test query', '2021-12-02 16:47:14'),
+(1, 'ram', 'ram@gmail.com', '986464', 'In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before the final copy is available. It is also used to temporarily replace text in a process called greeking, which allows designers to consider the form of a webpage or publication, without the meaning of the text influencing the design.\r\n\r\nLorem ipsum is typically a corrupted version of De finibus bonorum et malorum, a 1st-century BC text by the Roman statesman and philosopher Cicero, with words altered, added, and removed to make it nonsensical and improper Latin.\r\n\r\nVersions of the Lorem ipsum text have been used in typesetting at least since the 1960s, when it was popularized by advertisements for Letraset transfer sheets.[1] Lorem ipsum was introduced to the digital world in the mid-1980s, when Aldus employed it in graphic and word-processing templates for its desktop publishing program PageMaker. Other popular word processors, including Pages and Microsoft Word, have since adopted Lorem ipsum,[2] as have many LaTeX packages,[3][4][5] web content managers such as Joomla! and WordPress, and CSS libraries such as Semantic UI.[6]', '2021-12-02 16:47:14'),
 (2, 'ram', 'ram@gmail.com', '9876543210', 'message sending trail', '2021-12-09 06:22:51');
 
 -- --------------------------------------------------------
@@ -108,16 +108,14 @@ CREATE TABLE `order` (
 --
 
 INSERT INTO `order` (`id`, `user_id`, `address`, `city`, `pincode`, `payment_type`, `total_price`, `payment_status`, `order_status`, `added_on`) VALUES
-(15, 14, 'ktm', 'ktm', 12345, 'COD', 11250, 'pending', 1, '2021-12-16 07:58:10'),
 (16, 13, 'btl', 'btl', 1233, 'COD', 33500, 'pending', 1, '2021-12-16 07:59:53'),
-(17, 13, 'ghost street', 'ktm', 12345, 'COD', 395000, 'pending', 1, '2021-12-16 08:17:10'),
-(18, 14, 'ktm street', 'ktm', 123, 'COD', 33750, 'pending', 4, '2021-12-16 04:20:03'),
-(21, 13, 'street', 'ktm', 123, 'COD', 18400, 'pending', 2, '2021-12-20 08:25:28'),
+(17, 13, 'ghost street', 'ktm', 12345, 'COD', 395000, 'pending', 5, '2021-12-16 08:17:10'),
+(21, 13, 'street', 'ktm', 123, 'COD', 18400, 'pending', 5, '2021-12-20 08:25:28'),
 (22, 13, 'ktm street', 'kkktm', 123, 'COD', 199250, 'pending', 1, '2021-12-20 09:46:31'),
 (23, 13, 'street', 'hnn', 123, 'COD', 22500, 'pending', 1, '2021-12-20 09:50:21'),
-(24, 29, 'street', 'bkt', 123, 'COD', 9200, 'pending', 1, '2021-12-20 11:29:09'),
-(25, 13, 'street 11', 'nyk', 12345, 'COD', 202500, 'pending', 1, '2022-01-03 02:00:24'),
-(26, 13, 'street', 'ktm', 123, 'COD', 33500, 'pending', 1, '2022-01-03 02:02:04');
+(24, 29, 'street', 'bkt', 123, 'COD', 9200, 'pending', 2, '2021-12-20 11:29:09'),
+(25, 13, 'street 11', 'nyk', 12345, 'COD', 202500, 'pending', 5, '2022-01-03 02:00:24'),
+(26, 13, 'street', 'ktm', 123, 'COD', 33500, 'pending', 5, '2022-01-03 02:02:04');
 
 -- --------------------------------------------------------
 
@@ -201,7 +199,10 @@ INSERT INTO `products` (`id`, `categories_id`, `product_name`, `mrp`, `price`, `
 (63, 12, 'Xiaomi Redmi 10 Prime', 20000, 19000, 7, '214179988_rredmi.jpg', 'MediaTek Helio G884 GB RAM64 GB internal storage6000 mAh batteryQuad (50+8+2+2) MP Rear, 8 MP Front Camera6.5 inches (16.51 cm)Dual, Nano-Nano SIMAndroid v11', 'Processor	MediaTek Helio G88\r\nDisplay	6.5 inches (16.51 cms)\r\nStorage	64 GB\r\nFront Camera	Single (8 MP, f/2.0 Camera(1.12 m pixel size))\r\nRear Camera	Quad (50 MP, f/1.8 Camera + 8 MP, f/2.2, Wide Angle, Ultra-Wide Angle Camera + 2 MP, f/2.4 Camera(1.75µm pixel size) + 2 MP, f/2.4, depth Camera(1.75µm pixel size))\r\nBattery	6000 mAh\r\nRAM	4 GB\r\nGENERAL\r\nLaunch Date	September 7, 2021\r\nDimensions	6.37 x 2.97 x 0.37 inch (161.9 x 75.5 x 9.5 mm)\r\nWeight	192 grams\r\nFace unlock	Yes\r\nWater Resistant	Yes, Splash proof\r\nColors	Phantom Black, Bifrost Blue, Astral White\r\nPROCESSOR\r\nChipset	MediaTek Helio G88\r\nNo of Cores	8 (Octa Core)\r\nCPU	2GHz, Dual core, Cortex A75 + 1.8GHz, Hexa Core, Cortex A55\r\nArchitecture	64-bit\r\nGraphics	Mali-G52 MC2\r\nSOFTWARE\r\nOperating System	Android v11\r\nCustom UI	MIUI\r\nSTORAGE\r\nInternal Memory	64 GB\r\nRAM	4 GB\r\nExpandable Memory	Yes, microSD, Up to 512 GB (Dedicated)\r\nDISPLAY\r\nResolution	1080 x 2400 pixels\r\nSize	6.5 inches (16.51 cms)\r\nDisplay Type	IPS LCD\r\nAspect ratio	20:9\r\nBezel-less display	Yes, with Punch-hole\r\nBrightness	400 nits\r\nProtection	Corning Gorilla Glass v3\r\nTouchScreen	Yes, Capacitive, Multi-touch\r\nColor Reproduction	16M Colors\r\nScreen to body percentage	83.45 %\r\nPixel Density	405 pixels per inch (ppi)\r\nCAMERA\r\nRear	Quad (50 MP, f/1.8 Camera + 8 MP, f/2.2, Wide Angle, Ultra-Wide Angle Camera + 2 MP, f/2.4 Camera(1.75µm pixel size) + 2 MP, f/2.4, depth Camera(1.75µm pixel size))\r\nFlash	Rear (LED Flash)\r\nFront	Single (8 MP, f/2.0 Camera(1.12µm pixel size))\r\nCamera Features	Auto Flash, Auto Focus, Face detection, Touch to focus\r\nShooting Modes	Continuos Shooting, High Dynamic Range mode (HDR)\r\nVideo	Rear: 1920x1080 @ 30 fps, 1280x720 @ 30 fps, Front: 1920x1080 @ 30 fps, 1280x720 @ 30 fps\r\nBATTERY\r\nType	Li-Polymer\r\nCapacity	6000 mAh\r\nRemovable	No\r\nFast Charging	Yes, 18W\r\nWireless Charging	No\r\nCONNECTIVITY\r\nWi-Fi	Yes with a/ac/b/g/n/n 5GHz\r\nSIM Configuration	Dual SIM (SIM1: Nano) (SIM2: Nano)\r\nBluetooth	Bluetooth v5.1\r\nNetwork	4G: Available (supports Indian bands), 3G: Available, 2G: Available\r\nVoice over LTE(VoLTE)	Yes\r\nWi-fi features	Mobile Hotspot\r\nGPS	Yes with A-GPS, Glonass\r\nInfrared	Yes\r\nUSB	USB Type-C, Mass storage device, USB charging\r\nNFC Chipset	No\r\nSENSORS\r\nFingerprint sensor	Yes, Side\r\nOther Sensor	Light sensor, Proximity sensor, Accelerometer, Compass\r\nSOUND\r\nSpeaker	Yes\r\nAudio Jack	Yes, 3.5mm', 1, 1),
 (64, 12, 'Samsung Galaxy F62', 35000, 33500, 3, '182922336_sf62.jpg', 'Samsung Exynos 9 Octa 98256 GB RAM128 GB internal storage7000 mAh batteryQuad (64+12+5+5) MP Rear, 32 MP Front Camera6.7 inches (17.02 cm)Dual, Nano-Nano SIMAndroid v11', 'Processor	Samsung Exynos 9 Octa 9825\\\\r\\\\nDisplay	6.7 inches (17.02 cms)\\\\r\\\\nStorage	128 GB\\\\r\\\\nFront Camera	Single (32 MP, f/2.2, Wide Angle Camera(26 mm focal length, 2.8\\\\\\\" sensor size, 0.8 m pixel size))\\\\r\\\\nRear Camera	Quad (64 MP, f/1.8, Wide Angle Camera + 12 MP, f/2.2, Wide Angle, Ultra-Wide Angle Camera + 5 MP, f/2.4, depth Camera + 5 MP, f/2.4 Camera)\\\\r\\\\nBattery	7000 mAh\\\\r\\\\nRAM	6 GB\\\\r\\\\nGENERAL\\\\r\\\\nLaunch Date	February 16, 2021\\\\r\\\\nDimensions	6.45 x 3 x 0.37 inch (163.9 x 76.3 x 9.5 mm)\\\\r\\\\nWeight	218 grams\\\\r\\\\nBuild	Back: Plastic\\\\r\\\\nFace unlock	Yes\\\\r\\\\nColors	Laser Green, Laser Blue, Laser Grey\\\\r\\\\nPROCESSOR\\\\r\\\\nChipset	Samsung Exynos 9 Octa 9825\\\\r\\\\nNo of Cores	8 (Octa Core)\\\\r\\\\nCPU	2.73GHz, Dual core + 2.4GHz, Dual core, Cortex A75 + 1.95GHz, Quad core, Cortex A55\\\\r\\\\nArchitecture	64-bit\\\\r\\\\nGraphics	Mali-G76 MP12\\\\r\\\\nSOFTWARE\\\\r\\\\nOperating System	Android v11\\\\r\\\\nCustom UI	Samsung One UI\\\\r\\\\nSTORAGE\\\\r\\\\nInternal Memory	128 GB\\\\r\\\\nRAM	6 GB\\\\r\\\\nExpandable Memory	Yes, Up to 1 TB (Dedicated)\\\\r\\\\nDISPLAY\\\\r\\\\nSize	6.7 inches (17.02 cms)\\\\r\\\\nDisplay Type	Super AMOLED Plus\\\\r\\\\nResolution	1080 x 2400 pixels\\\\r\\\\nAspect ratio	20:9\\\\r\\\\nBezel-less display	Yes, with Punch-hole\\\\r\\\\nBrightness	420 nits\\\\r\\\\nProtection	Corning Gorilla Glass v3\\\\r\\\\nTouchScreen	Yes, Capacitive, Multi-touch\\\\r\\\\nColor Reproduction	16M Colors\\\\r\\\\nScreen to body percentage	86.66 %\\\\r\\\\nPixel Density	393 pixels per inch (ppi)\\\\r\\\\nCAMERA\\\\r\\\\nFlash	Rear (LED Flash)\\\\r\\\\nRear	Quad (64 MP, f/1.8, Wide Angle Camera + 12 MP, f/2.2, Wide Angle, Ultra-Wide Angle Camera + 5 MP, f/2.4, depth Camera + 5 MP, f/2.4 Camera)\\\\r\\\\nSensor	Exmor-RS CMOS Sensor\\\\r\\\\nFront	Single (32 MP, f/2.2, Wide Angle Camera(26 mm focal length, 2.8\\\\\\\" sensor size, 0.8µm pixel size))\\\\r\\\\nCamera Features	Auto Flash, Auto Focus, Face detection, Touch to focus\\\\r\\\\nShooting Modes	Continuos Shooting, High Dynamic Range mode (HDR)\\\\r\\\\nZoom	Digital 10 x\\\\r\\\\nVideo	Rear: 3840x2160 @ 30 fps, 1920x1080 @ 30 fps, 1280x720 @ 60 fps, Front: 3840x2160 @ 30 fps, 30 fps\\\\r\\\\nBATTERY\\\\r\\\\nCharging speed	20% to 100% in 01h 40m 22s (in-house tested)\\\\r\\\\nType	Li-ion\\\\r\\\\nCapacity	7000 mAh\\\\r\\\\nRemovable	No\\\\r\\\\nFast Charging	Yes, 25W\\\\r\\\\nTalk time	Up to 50 Hours(4G)\\\\r\\\\nWireless Charging	No\\\\r\\\\nCONNECTIVITY\\\\r\\\\nUSB OTG Support	Yes\\\\r\\\\nWi-Fi	Yes with ac/b/g/n/n 5GHz\\\\r\\\\nSIM Configuration	Dual SIM (SIM1: Nano) (SIM2: Nano)\\\\r\\\\nBluetooth	Bluetooth v5.0\\\\r\\\\nNetwork	4G: Available (supports Indian bands), 3G: Available, 2G: Available\\\\r\\\\nVoice over LTE(VoLTE)	Yes\\\\r\\\\nWi-fi features	Wi-Fi Direct, Mobile Hotspot\\\\r\\\\nGPS	Yes with A-GPS, Glonass\\\\r\\\\nInfrared	Yes\\\\r\\\\nUSB	USB Type-C, Mass storage device, USB charging, USB On-The-Go\\\\r\\\\nNFC Chipset	Yes\\\\r\\\\nSENSORS\\\\r\\\\nFingerprint sensor	Yes, Side\\\\r\\\\nOther Sensor	Light sensor, Proximity sensor, Accelerometer, Gyroscope\\\\r\\\\nSOUND\\\\r\\\\nSpeaker Features	Dolby Atmos\\\\r\\\\nSpeaker	Yes\\\\r\\\\nAudio Jack	Yes, 3.5mm', 0, 1),
 (65, 11, 'TP-Link 300Mbps Wireless N Router TL-WR841N', 2500, 2300, 12, '812731776_rrouter.jpg', '300Mbps/ wireless/ two antennas/ compatible with IPv6/ IP based bandwidth control', '300Mbps wireless speed ideal for interruption sensitive applications like HD video streaming*\r\nTwo antennas greatly increase the wireless robustness and stability\r\nEasy wireless security encryption at a push of WPS button\r\nIP based bandwidth control allows administrators to determine how much bandwidth is allotted to each PC\r\nCompatible with IPv6 -the more recent Internet Protocol version\r\nTP-LINK Tether App allows quick installation and easy management using any mobile device', 1, 1),
-(66, 11, 'Logitech G403 Prodigy RGB Gaming Mouse', 12000, 11250, 2, '695501084_mousee.jpg', 'Ergonomic, lightweight design/ rubber side grips/ removable 10 gram weight/ optical sensor/ Six programmable buttons and onboard memory', 'Logitech G403 mouse for advanced gaming-grade accuracy and performance\\r\\nErgonomic, lightweight design with rubber side grips and a removable 10 gram weight for supremely comfortable grip and control\\r\\nLogitech’s most advanced optical sensor delivers unbeatable fps mouse accuracy and more\\r\\nCustomize lighting from a palette of 16.8 million colors to match your style and gaming gear\\r\\nSix programmable buttons and onboard memory make it easy to setup and store custom commands for your favorite games\\r\\n1 Year Warranty', 0, 1);
+(66, 11, 'Logitech G403 Prodigy RGB Gaming Mouse', 1200, 1125, 2, '695501084_mousee.jpg', 'Ergonomic, lightweight design/ rubber side grips/ removable 10 gram weight/ optical sensor/ Six programmable buttons and onboard memory', 'Logitech G403 mouse for advanced gaming-grade accuracy and performance\\r\\nErgonomic, lightweight design with rubber side grips and a removable 10 gram weight for supremely comfortable grip and control\\r\\nLogitech’s most advanced optical sensor delivers unbeatable fps mouse accuracy and more\\r\\nCustomize lighting from a palette of 16.8 million colors to match your style and gaming gear\\r\\nSix programmable buttons and onboard memory make it easy to setup and store custom commands for your favorite games\\r\\n1 Year Warranty', 0, 1),
+(71, 13, 'MSI GL75 Leopard 10SDR', 200000, 190000, 10, '861667411_', 'i7 10TH GEN / GTX 1660Ti / 15.6\" 144Hz FHD display / 512GB SSD / 16GB RAM', 'Highlights\r\nBrand\r\nMSI\r\nModel Number\r\nGL75\r\nWireless Connectivity\r\nYes\r\nUsb Connectivity\r\nYes\r\nType Of Product\r\nLaptop\r\nTouchpad\r\nYes\r\nDimension\r\n398.5 x 272 x 28 mm\r\nScreen Size\r\n15.6 Inch\r\nRgb Lighting\r\nYes\r\nCpu Chipset Model\r\nIntel HM470\r\nChipset Manufacturer\r\nIntel\r\nCondition\r\nNew\r\nDisplay Features\r\nFull Hd\r\nGraphic Card Model\r\n‎NVIDIA GeForce GTX 1660 Ti 6GB\r\nRam Capacity\r\n16 GB\r\nGraphic Card Chipset\r\nNvidia\r\nMaximum Resolution\r\n1920X1080\r\nRAM\r\n16GB\r\nNumber Of USB Ports\r\n4\r\nBluetooth Version\r\n5.1', 0, 1),
+(72, 13, 'Lenovo Legion 5', 168500, 152000, 8, '894372999_', 'Lenovo Legion 5 Gaming Laptop(Intel i5/10th/16GB DDR4 /256 GB SSD M.2 NVMe + 1TB HDD 5200 rpm /4GB Nvidia GeForce GTX 1650Ti Gfx GDDR6 Win 10 Home)phantom black', 'Brand\r\nLenovo\r\nColor\r\nBlack\r\nWireless Connectivity\r\nYes\r\nUsb Connectivity\r\nYes\r\nTouchpad\r\nYes\r\nDimension\r\n36.3 x 25.9 x 2.3 Centimeters\r\nScreen Size\r\n15.6 Inch\r\nRgb Lighting\r\nNo\r\nCpu Chipset Model\r\nIntel I5\r\nChipset Manufacturer\r\nIntel\r\nRam Capacity\r\n8 GB\r\nGraphic Card Chipset\r\nNvidia\r\nMaximum Resolution\r\n1920X1080\r\nRAM\r\n8GB\r\nBattery Life\r\n6-10 Hour\r\nWarranty\r\n1 Year\r\nWarranty Period\r\n12 months', 0, 1),
+(73, 13, 'HP Envy x360 13M', 152000, 149000, 5, '727622589_', 'HP Envy x360 13M i7 11th Gen / 8GB RAM / 512GB SSD / 13.3\" OLED 360 TouchScreen Display', 'HP Envy x360 13M-BD0033 11th Gen Intel Core i7-1165G7 processor, Intel Iris Xe Graphics, 8GB DDR4 RAM, 512GB SSD storage, 13.3-inch OLED display with Full-HD (1920 x 1080 pixels) resolution, 400nits brightness,100% DCI-P3, 360-degree TouchScreen panel, BT WIN10 Webcam PALE GOLD Backlit Keyboard', 0, 1);
 
 -- --------------------------------------------------------
 
@@ -228,15 +229,16 @@ INSERT INTO `product_review` (`id`, `product_id`, `user_id`, `product_name`, `pr
 (64, 66, 29, 'Logitech G403 Prodigy RGB Gaming Mouse', 1, '', 1, '2022-01-03 01:56:39'),
 (65, 62, 29, 'Acer Swift 3 2021', 2, '', 1, '2022-01-03 01:56:51'),
 (66, 61, 29, 'Acer Predator Helios 300 2021', 3, '', 1, '2022-01-03 01:57:07'),
-(67, 64, 29, 'Samsung Galaxy F62', 5, '', 1, '2022-01-03 01:57:38'),
 (68, 63, 29, 'Xiaomi Redmi 10 Prime', 4, '', 1, '2022-01-03 01:57:47'),
 (69, 65, 29, 'TP-Link 300Mbps Wireless N Router TL-WR841N', 2, '', 1, '2022-01-03 01:57:57'),
-(70, 66, 13, 'Logitech G403 Prodigy RGB Gaming Mouse', 3, '', 1, '2022-01-03 01:58:42'),
+(70, 66, 13, 'Logitech G403 Prodigy RGB Gaming Mouse', 1, 'bad', 1, '2022-01-25 09:34:57'),
 (71, 65, 13, 'TP-Link 300Mbps Wireless N Router TL-WR841N', 4, '', 1, '2022-01-03 01:58:54'),
 (72, 62, 13, 'Acer Swift 3 2021', 5, '', 1, '2022-01-03 01:59:26'),
 (73, 61, 13, 'Acer Predator Helios 300 2021', 3, '', 1, '2022-01-03 01:59:38'),
 (74, 63, 13, 'Xiaomi Redmi 10 Prime', 2, '', 1, '2022-01-03 01:59:49'),
-(75, 64, 13, 'Samsung Galaxy F62', 3, '', 1, '2022-01-03 02:00:00');
+(75, 64, 13, 'Samsung Galaxy F62', 3, '', 1, '2022-01-03 02:00:00'),
+(77, 73, 29, 'HP Envy x360 13M', 5, '', 1, '2022-01-25 09:32:32'),
+(78, 73, 13, 'HP Envy x360 13M', 2, '', 1, '2022-01-25 09:33:10');
 
 -- --------------------------------------------------------
 
@@ -259,7 +261,10 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `username`, `password`, `email`, `mobile`, `added_on`) VALUES
 (13, 'user', 'user', 'user@user.com', '9876543210', '2021-12-12 06:41:05'),
-(29, 'abc', 'abc', 'abc@gmail.com', '1234567891', '2021-12-18 06:09:22');
+(29, 'abc', 'abc', 'abc@gmail.com', '1234567891', '2021-12-18 06:09:22'),
+(32, 'test', 'test', 'test@gmail.com', '9869320369', '2022-01-04 04:14:39'),
+(33, 'sujphu', 'k2kb21hdmq8', 'sujphu@gmail.com', '9869320369', '2022-01-04 04:16:25'),
+(37, 'xyz', 'xyz', 'xyz@gmail.com', '9876543210', '2022-01-04 05:32:47');
 
 -- --------------------------------------------------------
 
@@ -281,8 +286,7 @@ CREATE TABLE `wishlist` (
 INSERT INTO `wishlist` (`id`, `user_id`, `product_id`, `added_on`) VALUES
 (42, 14, 64, '2021-12-17 12:04:20'),
 (43, 14, 63, '2021-12-17 12:04:22'),
-(44, 14, 66, '2021-12-17 12:10:33'),
-(65, 13, 66, '2022-01-03 02:00:35');
+(44, 14, 66, '2021-12-17 12:10:33');
 
 --
 -- Indexes for dumped tables
@@ -392,19 +396,19 @@ ALTER TABLE `order_status`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=74;
 
 --
 -- AUTO_INCREMENT for table `product_review`
 --
 ALTER TABLE `product_review`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT for table `wishlist`

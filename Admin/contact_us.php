@@ -56,7 +56,7 @@ $res=mysqli_query($con,$sql);
                                            ?>
                                         </td>
                                     </tr>
-                                    <?php } ?>
+                                    <?php $i=$i+1; } ?>
                                  </tbody>
                               </table>
                            </div>
