@@ -29,6 +29,7 @@ $res=mysqli_query($con,$sql);
 							</thead>
 							<tbody>
 								<?php
+								mysqli_query($con,"update `order` set payment_status='success' where order_status=5");
 								$res=mysqli_query($con,"select `order`.*,order_status.name as order_status_str from `order`,order_status where order_status.id=`order`.order_status order by `order`.id desc");
 								$i=1;
 								while($row=mysqli_fetch_assoc($res)){

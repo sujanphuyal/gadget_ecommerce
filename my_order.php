@@ -61,8 +61,7 @@ if(!isset($_SESSION['USER_LOGIN'])){
 												</td>
 												<td class="product-name"><?php echo $row['payment_type']?></td>
 												<td class="product-name"><?php echo ucfirst($row['payment_status'])?></td>
-												<td class="product-name"><?php echo $row['order_status_str']?></td>
-                                                
+												<td class="product-name"><?php echo $row['order_status_str']?></td>                                               
                                             </tr>
                                             <?php } ?>
                                         </tbody>

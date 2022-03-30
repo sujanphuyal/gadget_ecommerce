@@ -19,20 +19,20 @@ while ($product = mysqli_fetch_array($products)) {
 // print_r($matrix);
 // echo "</pre>"; 
 
-// getRecommendation($matrix,"user_name");
-
 $users = mysqli_query($con, "select username from users where id=$_SESSION[USER_ID]");
 $username = mysqli_fetch_array($users);
 
 ?>
 
 <?php
-$recommendation = array();
-$recommendation = getRecommendation($matrix, $username['username']);
+$recom = array();
+$recom = gerecom($matrix, $username['username']);
 
 $count=1;
 
-foreach ($recommendation as $product => $rating) {
+//print_r($recom);
+
+foreach ($recom as $product => $rating) {
     if($count>4){
         break;
     }
@@ -46,10 +46,14 @@ foreach ($recommendation as $product => $rating) {
     
             <?php 
             
+            $sim_dis = ($rating /5);
+
             $imagequery = mysqli_query($con, "select products.id,products.image from products,product_review where products.id=product_review.product_id and products.product_name='$product'");
 
             $list = mysqli_fetch_array($imagequery);
-            
+
+            // echo $sim_dis;
+
                 ?>
                 
                 <div class="ht__cat__thumb">
@@ -70,9 +74,7 @@ foreach ($recommendation as $product => $rating) {
         </div>
     </div>
 
-    <!--------------------------- Recommendation Ends Here------------------------------------------- -->
-
-
+    <!--------------------------- recom Ends Here------------------------------------------- -->
 
 <?php 
 $count++;

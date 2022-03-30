@@ -76,13 +76,19 @@ function user_register() {
                     jQuery('#email_error').html('Email id already present');
                 }
                 if (result == 'insert') {
-                    jQuery('.register_msg p').html('Thank you for registration, please login');
+                    
+                    // jQuery('.register_msg p').html('Thank you for registration, please login');
+                    alert("Thank You For Registration, Please Login");
+
+                    window.location.href = window.location.href;
+
                 }
             }
         });
     }
 
 }
+
 
 
 

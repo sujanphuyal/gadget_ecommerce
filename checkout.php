@@ -14,7 +14,7 @@ if(isset($_POST['submit'])){
 	$address=get_safe_value($con,$_POST['address']);
 	$city=get_safe_value($con,$_POST['city']);
 	$pincode=get_safe_value($con,$_POST['pincode']);
-	$payment_type='COD';
+	$payment_type='cod';
 	$user_id=$_SESSION['USER_ID'];
 	foreach($_SESSION['cart'] as $key=>$val){
 		$productArr=get_product($con,'','',$key);
@@ -26,7 +26,7 @@ if(isset($_POST['submit'])){
 	$total_price=$cart_total;
 	$payment_status='pending';
 	if($payment_type=='cod'){
-		$payment_status='success';
+		$payment_status='pending';
 	}
 	$order_status='1';
 	$added_on=date('Y-m-d h:i:s');
@@ -260,11 +260,11 @@ if(isset($_POST['submit'])){
     onApprove: function (data, actions) {
         return actions.order.capture().then(function (details) {
             console.log(details)
-            window.location.replace("http://localhost/testing/successfulpayment.php")
+            window.location.replace("http://localhost/gadget_ecommerce/successfulpayment.php")
         })
     },
     onCancel: function (data) {
-        window.location.replace("http://localhost/testing/cancelledpayment.php")
+        window.location.replace("http://localhost/gadget_ecommerce/cancelledpayment.php")
     }
 }).render('#paypal-payment-button');
 	</script>		

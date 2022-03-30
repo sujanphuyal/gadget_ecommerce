@@ -79,7 +79,8 @@ $comment_query=mysqli_query($con,"select count(id) AS ccount from contact_us");
                     <h1 class="card-text"><b><?php echo $row['pqty'] ?></b></h1>
                     <?php } ?>
                     <br>
-                    <a href="product.php" class="btn btn-link">More info....</a>
+                    <br>
+                    <!-- <a href="#" class="btn btn-link"></a> -->
                 </div>
             </div>
         </div>

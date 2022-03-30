@@ -1,12 +1,12 @@
 <?php 
-function similarity_distance($matrix, $person1, $person2)
+function sim_dis($matrix, $p1, $p2)
 {
     $similar=array();
     $sum=0;
 
-    foreach($matrix[$person1] as $key=>$value)
+    foreach($matrix[$p1] as $key=>$value)
     {
-        if(array_key_exists($key,$matrix[$person2]))
+        if(array_key_exists($key,$matrix[$p2]))
         {
             $similar[$key]=1;
         }
@@ -16,11 +16,11 @@ function similarity_distance($matrix, $person1, $person2)
             return 0;
         }
 
-        foreach($matrix[$person1] as $key=>$value)
+        foreach($matrix[$p1] as $key=>$value)
     {
-        if(array_key_exists($key,$matrix[$person2]))
+        if(array_key_exists($key,$matrix[$p2]))
         {
-          $sum=$sum+pow($value-$matrix[$person2][$key],2);
+          $sum=$sum+pow($value-$matrix[$p2][$key],2);
         }
     }
     return 1/(1+sqrt($sum));
@@ -28,22 +28,22 @@ function similarity_distance($matrix, $person1, $person2)
 }
 
 
-function getRecommendation($matrix, $person)
+function gerecom($matrix, $p)
 {
     $total=array();
     $simsums=array();
     $ranks=array();
 
 
-    foreach($matrix as $otherPerson=>$value)
+    foreach($matrix as $op=>$value)
     {
-        if($otherPerson!=$person)
+        if($op!=$p)
         {
-            $sim=similarity_distance($matrix,$person,$otherPerson);
+            $sim=sim_dis($matrix,$p,$op);
             
-            foreach($matrix[$otherPerson] as $key=>$value)
+            foreach($matrix[$op] as $key=>$value)
             {
-                if(!array_key_exists($key,$matrix[$person]))
+                if(!array_key_exists($key,$matrix[$p]))
                 {
 
                     if(!array_key_exists($key,$total))
@@ -52,7 +52,7 @@ function getRecommendation($matrix, $person)
                         $total[$key]=0;
                     }
 
-                    $total[$key]+=$matrix[$otherPerson] [$key]*$sim;
+                    $total[$key]+=$matrix[$op] [$key]*$sim;
 
                     if(!array_key_exists($key,$simsums))
                     {

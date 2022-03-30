@@ -60,7 +60,7 @@ require('top.php');
                                                 <a href="javascript:void(0)" onclick="manage_cart('<?php echo $key?>','update')"><button class="btn btn-secondary"><strong>update</strong></button></a>
 												</td>
 												<td class="product-subtotal">Rs &nbsp;<?php echo $qty*$price?></td>
-												<td class="product-remove"><a href="javascript:void(0)" onclick="manage_cart('<?php echo $key?>','remove')"><i class="icon-trash icons"></i></a></td>
+												<td class="product-remove"><a href="javascript:void(0)" onclick="manage_cart('<?php echo $key?>','remove')"><i class="icon-trash icons"></i></a></td>                                  
 											</tr>
 											<?php } } ?>
                                     </tbody>

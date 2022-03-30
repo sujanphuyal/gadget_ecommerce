@@ -14,7 +14,7 @@
                                         <h2>collection 2021</h2>
                                         <h1>SmartPhones</h1>
                                         <div class="cr__btn">
-                                            <a href="cart.php">Shop Now</a>
+                                            <a href="categories.php?id=2">Shop Now</a>
                                         </div>
                                     </div>
                                 </div>
@@ -38,7 +38,7 @@
                                         <h2>collection 2021</h2>
                                         <h1>Laptops</h1>
                                         <div class="cr__btn">
-                                            <a href="cart.php">Shop Now</a>
+                                            <a href="categories.php?id=3">Shop Now</a>
                                         </div>
                                     </div>
                                 </div>
